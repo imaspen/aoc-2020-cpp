@@ -18,17 +18,18 @@ namespace aoc
 	public:
 		input(bool test, int day);
 
-		std::vector<std::string> strings() { return m_lines; }
+		std::vector<std::string> strings(bool raw = false) const;
 
-		std::vector<int> ints();
+		std::vector<int> ints() const;
 
-		std::vector<std::tuple<std::string, std::string>> string_string_tuples();
+		std::vector<std::tuple<std::string, std::string>> string_string_tuples() const;
 
-		std::vector<std::tuple<std::string, int>> string_int_tuples();
+		std::vector<std::tuple<std::string, int>> string_int_tuples() const;
 
 		std::vector<std::vector<bool>> bits() const;
 
 	private:
 		std::vector<std::string> m_lines;
+		std::vector<std::string> m_lines_raw;
 	};
 };

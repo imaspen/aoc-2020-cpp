@@ -19,6 +19,7 @@ aoc::input::input(bool test, int day)
 		{
 			std::string line;
 			std::getline(file, line);
+			m_lines_raw.emplace_back(line);
 			if (line != "")
 			{
 				m_lines.emplace_back(line);
@@ -32,7 +33,12 @@ aoc::input::input(bool test, int day)
 	}
 }
 
-std::vector<int> aoc::input::ints()
+std::vector<std::string> aoc::input::strings(bool raw) const
+{
+	return raw ? m_lines_raw : m_lines;
+}
+
+std::vector<int> aoc::input::ints() const
 {
 	std::vector<int> lines(m_lines.size());
 	for (size_t i = 0; i < lines.size(); ++i)
@@ -42,7 +48,7 @@ std::vector<int> aoc::input::ints()
 	return lines;
 }
 
-std::vector<std::tuple<std::string, std::string>> aoc::input::string_string_tuples()
+std::vector<std::tuple<std::string, std::string>> aoc::input::string_string_tuples() const
 {
 	std::vector<std::tuple<std::string, std::string>> lines(m_lines.size());
 	for (size_t i = 0; i < lines.size(); ++i)
@@ -54,7 +60,7 @@ std::vector<std::tuple<std::string, std::string>> aoc::input::string_string_tupl
 	return lines;
 }
 
-std::vector<std::tuple<std::string, int>> aoc::input::string_int_tuples()
+std::vector<std::tuple<std::string, int>> aoc::input::string_int_tuples() const
 {
 	std::vector<std::tuple<std::string, int>> lines(m_lines.size());
 	for (size_t i = 0; i < lines.size(); ++i)
