@@ -48,6 +48,26 @@ std::vector<int> aoc::input::ints() const
 	return lines;
 }
 
+std::vector<long> aoc::input::longs() const
+{
+	std::vector<long> lines(m_lines.size());
+	for (size_t i = 0; i < lines.size(); ++i)
+	{
+		lines.at(i) = stol(m_lines.at(i));
+	}
+	return lines;
+}
+
+std::vector<unsigned long> aoc::input::unsigned_longs() const
+{
+	std::vector<unsigned long> lines(m_lines.size());
+	for (size_t i = 0; i < lines.size(); ++i)
+	{
+		lines.at(i) = stoul(m_lines.at(i));
+	}
+	return lines;
+}
+
 std::vector<std::tuple<std::string, std::string>> aoc::input::string_string_tuples() const
 {
 	std::vector<std::tuple<std::string, std::string>> lines(m_lines.size());
