@@ -10,6 +10,7 @@
 #include "days/day_05.hpp"
 #include "days/day_06.hpp"
 #include "days/day_07.hpp"
+#include "days/day_08.hpp"
 
 void print_usage()
 {
@@ -19,7 +20,7 @@ void print_usage()
 	std::cout << "\t-p<part>\tRequired. Part number (1-2)" << std::endl;
 }
 
-int main(int argc, const char *argv[])
+int main(int argc, const char* argv[])
 {
 	int day = 0;
 	int part = 0;
@@ -106,6 +107,9 @@ int main(int argc, const char *argv[])
 			break;
 		case 7:
 			day_ptr = std::make_unique<aoc::day_07>(input);
+			break;
+		case 8:
+			day_ptr = std::make_unique<aoc::day_08>(input);
 			break;
 		default:
 			std::cout << "Unimplemented." << std::endl;

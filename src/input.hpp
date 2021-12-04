@@ -9,7 +9,7 @@ namespace aoc
 	class file_not_found_exception : public std::exception
 	{
 	public:
-		file_not_found_exception(const std::string &path) : path(path){};
+		file_not_found_exception(const std::string& path) : path(path) {};
 		const std::string path;
 	};
 
@@ -27,6 +27,8 @@ namespace aoc
 		std::vector<std::tuple<std::string, int>> string_int_tuples() const;
 
 		std::vector<std::vector<bool>> bits() const;
+
+		bool test;
 
 	private:
 		std::vector<std::string> m_lines;
