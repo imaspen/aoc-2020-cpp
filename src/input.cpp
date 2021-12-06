@@ -48,6 +48,20 @@ std::vector<int> aoc::input::ints() const
 	return lines;
 }
 
+std::vector<int> aoc::input::csv_ints() const
+{
+	std::string line = m_lines.at(0);
+	std::vector<int> ints;
+	size_t next_pos = 0;
+	while (next_pos < line.size())
+	{
+		line = line.substr(next_pos);
+		ints.emplace_back(std::stoi(line, &next_pos));
+		++next_pos;
+	}
+	return ints;
+}
+
 std::vector<long> aoc::input::longs() const
 {
 	std::vector<long> lines(m_lines.size());

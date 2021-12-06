@@ -17,6 +17,7 @@
 #include "days/day_12.hpp"
 #include "days/day_13.hpp"
 #include "days/day_14.hpp"
+#include "days/day_15.hpp"
 
 void print_usage()
 {
@@ -134,6 +135,9 @@ int main(int argc, const char* argv[])
 			break;
 		case 14:
 			day_ptr = std::make_unique<aoc::day_14>(input);
+			break;
+		case 15:
+			day_ptr = std::make_unique<aoc::day_15>(input);
 			break;
 		default:
 			std::cout << "Unimplemented." << std::endl;
