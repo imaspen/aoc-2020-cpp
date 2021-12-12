@@ -22,6 +22,8 @@ namespace aoc
 
 		std::vector<int> ints() const;
 
+		std::vector<std::vector<int>> digits() const;
+
 		std::vector<int> csv_ints() const;
 
 		std::vector<long> longs() const;

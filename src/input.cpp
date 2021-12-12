@@ -48,6 +48,21 @@ std::vector<int> aoc::input::ints() const
 	return lines;
 }
 
+std::vector<std::vector<int>> aoc::input::digits() const
+{
+	std::vector<std::vector<int>> digits;
+	for (const auto& row : m_lines)
+	{
+		std::vector<int> digits_row;
+		for (const auto& c : row)
+		{
+			digits_row.emplace_back(c - '0');
+		}
+		digits.emplace_back(digits_row);
+	}
+	return digits;
+}
+
 std::vector<int> aoc::input::csv_ints() const
 {
 	std::string line = m_lines.at(0);
